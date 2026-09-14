@@ -2,3 +2,6 @@ flask
 gunicorn
 textblob
 speechrecognition
+opencv-contrib-python
+mediapipe
+numpy
