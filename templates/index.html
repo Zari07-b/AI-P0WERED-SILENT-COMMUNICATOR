@@ -14,15 +14,31 @@
 
 <body >
 
-    <header class="header">
+     <header class="header">
 
-        <div class="logo">
-            🤖 AI Silent Communicator
-        </div>
+        
+        
 
-        <div class="status">
-            🟢 System Online
-        </div>
+    <div class="logo">
+        🤖 AI Silent Communicator
+    </div>
+
+    <div class="status">
+        🟢 System Online
+
+        <a
+            href="{{ url_for('admin_login') }}"
+            class="header-admin-link"
+        >
+            🔐 Admin Login
+        </a>
+
+    </div>
+    <a href="{{ url_for('admin_logout') }}" class="logout-btn">
+            🚪 Logout
+        </a>
+
+
 
     </header>
 
@@ -39,13 +55,95 @@
             </p>
 
         </section>
+        <section class="communication-card">
+
+    <!-- SPEECH TO TEXT -->
+    <div class="speech-section">
+
+        <h2>🎤 Speech to Text</h2>
+
+        <textarea
+            id="announcement"
+            name="announcement"
+            placeholder="Type your announcement here..."
+            form="announcementForm"
+        ></textarea>
+
+        <button
+            type="button"
+            class="voice-btn"
+            onclick="startVoice()">
+            🎤 Speak
+        </button>
+
+        <p id="voiceStatus"></p>
+
+    </div>
+
+
+    <!-- HAND GESTURE -->
+    <div class="gesture-section">
+
+        <h2>✋ Hand Gesture</h2>
+
+        <div class="camera-box">
+
+            <img
+                src="{{ url_for('video_feed') }}"
+                alt="Live Hand Gesture Camera"
+                class="gesture-camera"
+            >
+
+        </div>
+
+        <div class="gesture-result">
+
+            <strong>Detected Gesture:</strong>
+
+            <span id="gestureText">
+                No gesture detected
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SEND ANNOUNCEMENT -->
+
+<form
+    id="announcementForm"
+    method="POST"
+    action="{{ url_for('announcement') }}">
+
+    <input
+        type="hidden"
+        name="announcement"
+        id="hiddenAnnouncement"
+    >
+
+    <button
+        type="submit"
+        class="send-btn"
+        onclick="
+            document.getElementById('hiddenAnnouncement').value =
+            document.getElementById('announcement').value;
+        ">
+
+        📢 Send Announcement
+
+    </button>
+
+</form>
 
 
         <section class="card">
 
             <h2>📢 Create Announcement</h2>
 
-            <form method="POST">
+            <form method="POST" action="{{ url_for('announcement') }}">
 
                 <textarea
                     id="announcement"

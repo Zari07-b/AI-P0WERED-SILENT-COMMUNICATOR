@@ -1,0 +1,124 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Login - AI Silent Communicator</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+
+        <div class="logo">
+            🤖 AI Silent Communicator
+        </div>
+
+        <div class="status">
+            🔐 Admin Login
+        </div>
+
+    </header>
+
+
+    <!-- Login Section -->
+    <main class="container auth-container">
+
+        <section class="card auth-card">
+
+            <h1>🔐 Admin Login</h1>
+
+            <p>
+                Only authorized administrators can send announcements.
+            </p>
+
+
+            <!-- Error / Flash Message -->
+            {% with messages = get_flashed_messages() %}
+
+                {% if messages %}
+
+                    <div class="flash-message">
+
+                        {% for message in messages %}
+
+                            <p>{{ message }}</p>
+
+                        {% endfor %}
+
+                    </div>
+
+                {% endif %}
+
+            {% endwith %}
+
+
+            <!-- Login Form -->
+            <form method="POST" class="auth-form">
+
+                <label for="username">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Enter admin username"
+                    required
+                >
+
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter admin password"
+                    required
+                >
+
+
+                <button type="submit" class="send-btn">
+                    🔐 Login
+                </button>
+
+            </form>
+
+
+            <!-- Back to Public Page -->
+            <a
+                href="{{ url_for('home') }}"
+                class="back-link"
+            >
+                ← Public Announcement Screen
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            AI-Powered Silent Communicator | College Project
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
+```

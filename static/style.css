@@ -311,3 +311,320 @@ footer {
     }
 
 }
+css
+/* =====================================
+   ADMIN LOGIN & DASHBOARD
+   Add this at the END of style.css
+   ===================================== */
+
+/* Login page */
+.auth-container {
+    max-width: 600px;
+    margin: 50px auto;
+}
+
+.auth-card {
+    text-align: center;
+}
+
+.auth-card h1 {
+    margin-bottom: 10px;
+}
+
+.auth-card p {
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+
+/* Login form */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.auth-form label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+}
+
+.auth-form input:focus {
+    border-color: #2563eb;
+}
+
+
+/* Login button */
+.auth-form button {
+    margin-top: 15px;
+    width: 100%;
+}
+
+
+/* Error message */
+.flash-message {
+    margin-top: 15px;
+    padding: 12px;
+    background: #fee2e2;
+    border-radius: 8px;
+    color: #b91c1c;
+}
+
+
+/* Back to public page */
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+
+/* Admin login button */
+.admin-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 25px;
+    background: #2563eb;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.admin-btn:hover {
+    opacity: 0.85;
+}
+
+
+/* Public screen button */
+.public-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 25px;
+    background: #2563eb;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* Logout button */
+.logout-btn {
+    display: inline-block;
+    padding: 14px 25px;
+    background: #dc2626;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logout-btn:hover {
+    opacity: 0.85;
+}
+
+
+/* Public announcement card */
+.public-card {
+    text-align: center;
+}
+
+
+/* Admin login link in header */
+.header-admin-link {
+    display: inline-block;
+    margin-left: 15px;
+    padding: 8px 12px;
+    background: white;
+    color: #1e293b;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.header-admin-link:hover {
+    opacity: 0.85;
+}
+/* =========================================
+   SPEECH + GESTURE COMMUNICATION
+   ========================================= */
+
+.communication-card {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+
+    align-items: start;
+}
+
+
+/* =========================================
+   SPEECH SECTION
+   ========================================= */
+
+.speech-section,
+.gesture-section {
+
+    width: 100%;
+}
+
+
+.speech-section h2,
+.gesture-section h2 {
+
+    margin-bottom: 20px;
+
+    font-size: 24px;
+}
+
+
+.speech-section textarea {
+
+    width: 100%;
+
+    height: 220px;
+
+    padding: 15px;
+
+    font-size: 18px;
+
+    border: 2px solid #ddd;
+
+    border-radius: 10px;
+
+    resize: none;
+}
+
+
+/* =========================================
+   CAMERA
+   ========================================= */
+
+.camera-box {
+
+    width: 100%;
+
+    height: 300px;
+
+    background: #111827;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.gesture-camera {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================================
+   GESTURE RESULT
+   ========================================= */
+
+.gesture-result {
+
+    margin-top: 15px;
+
+    padding: 15px;
+
+    background: #eff6ff;
+
+    border-left: 5px solid #2563eb;
+
+    border-radius: 8px;
+
+    font-size: 18px;
+
+}
+
+
+#gestureText {
+
+    font-weight: bold;
+
+    margin-left: 8px;
+
+}
+
+
+/* =========================================
+   SEND BUTTON
+   ========================================= */
+
+#announcementForm {
+
+    text-align: center;
+
+    margin-top: 25px;
+}
+
+
+#announcementForm .send-btn {
+
+    min-width: 250px;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 800px) {
+
+    .communication-card {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .camera-box {
+
+        height: 280px;
+
+    }
+
+}
+
