@@ -82,19 +82,44 @@
 
 
     <!-- HAND GESTURE -->
-    <div class="gesture-section">
+     
+<!-- HAND GESTURE -->
+<div class="gesture-section">
+    <h2>✋ Hand Gesture</h2>
+
+    <div class="camera-box">
+        <video
+            id="gestureCamera"
+            class="gesture-camera"
+            autoplay
+            playsinline
+        ></video>
+
+        <canvas id="gestureCanvas" style="display: none;"></canvas>
+    </div>
+
+    <p>
+        Detected Gesture:
+        <span id="gestureText">No gesture detected</span>
+    </p>
+
+    <button type="button" onclick="startGestureCamera()">
+        📷 Start Camera
+    </button>
+</div>
+
+     <button type="button" onclick="startGestureCamera()">
+    📷 Start Camera
+</button>
+    {% comment %} <div class="gesture-section">
 
         <h2>✋ Hand Gesture</h2>
-
         <div class="camera-box">
+    <video id="gestureCamera" autoplay playsinline></video>
+    <canvas id="gestureCanvas" style="display:none;"></canvas>
+</div>
 
-            <img
-                src="{{ url_for('video_feed') }}"
-                alt="Live Hand Gesture Camera"
-                class="gesture-camera"
-            >
-
-        </div>
+         
 
         <div class="gesture-result">
 
@@ -111,7 +136,7 @@
 </section>
 
 
-<!-- SEND ANNOUNCEMENT -->
+<!-- SEND ANNOUNCEMENT --> {% endcomment %}
 
 <form
     id="announcementForm"
@@ -263,8 +288,10 @@
     </footer>
 
 
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+   <script src= "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision/vision_bundle.mjs"
+        type="module"></script>
 
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 
 </html>
