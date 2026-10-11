@@ -108,35 +108,11 @@
     </button>
 </div>
 
-     <button type="button" onclick="startGestureCamera()">
-    📷 Start Camera
-</button>
-    {% comment %} <div class="gesture-section">
-
-        <h2>✋ Hand Gesture</h2>
-        <div class="camera-box">
-    <video id="gestureCamera" autoplay playsinline></video>
-    <canvas id="gestureCanvas" style="display:none;"></canvas>
-</div>
-
-         
-
-        <div class="gesture-result">
-
-            <strong>Detected Gesture:</strong>
-
-            <span id="gestureText">
-                No gesture detected
-            </span>
-
-        </div>
-
-    </div>
-
-</section>
+   
+    
 
 
-<!-- SEND ANNOUNCEMENT --> {% endcomment %}
+<!-- SEND ANNOUNCEMENT --> 
 
 <form
     id="announcementForm"
@@ -288,10 +264,7 @@
     </footer>
 
 
-   <script src= "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision/vision_bundle.mjs"
-        type="module"></script>
-
-<script src="{{ url_for('static', filename='script.js') }}"></script>
+   </script>
 </body>
 
 </html>
